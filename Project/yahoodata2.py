@@ -5,8 +5,6 @@ import pandas as pd
 from datetime import datetime
 from pandas_datareader import data as web
 
-
-
 # Dow Jones Industrial Average Tickers
 
 DJIA = ['BIV','BLV','BND','VCIT','VFIAX',
@@ -39,3 +37,6 @@ df.to_csv('SethFundData.csv', encoding='utf-8') #write to CSV
 
 
 print("End Time: ", datetime.today().now())
+
+https://www.quandl.com/api/v3/datasets/WIKI
+/FB/data.json?api_key=yMLokEbxp-qKyfgZq__s
