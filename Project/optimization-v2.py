@@ -75,7 +75,6 @@ def statistics(weights):
 	pret = np.dot(trn_df.mean(), weights) * mult
 	pvol = np.sqrt(np.dot(weights.T, np.dot(trn_df.cov() * mult, weights)))
 	return(np.array([pret,pvol, pret / pvol]))
-
 def min_sharpe(weights):
 	return(-statistics(weights)[2])
 def min_variance(weights):
@@ -88,7 +87,6 @@ print("baseweights ={}".format(base_weights))
 cons = ({'type':'eq', 'fun':lambda x: np.sum(x) - 1}) #defining constraints 
 bnds = tuple((0, 1) for x in range(noc))
 blub = np.delete(np.array(trn_df.columns),(0), axis=0)
-print("blub")
 print(blub)
 
 opts = sco.minimize(min_sharpe, base_weights, method='SLSQP', bounds=bnds, constraints=cons)
